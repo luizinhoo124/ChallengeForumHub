@@ -73,7 +73,7 @@ A API REST do Fórum Hub possui as seguintes funcionalidades:
 
 ## Tecnologias Utilizadas
 
-- **Java 11:** Linguagem de programação utilizada para o desenvolvimento da API.
+- **Java 17:** Linguagem de programação utilizada para o desenvolvimento da API.
 - **Spring Boot:** Framework utilizado para a criação da aplicação.
 - **Spring Security:** Utilizado para implementação das camadas de segurança.
 - **JWT (JSON Web Token):** Utilizado para autenticação dos usuários.
