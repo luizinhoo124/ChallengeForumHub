@@ -9,6 +9,16 @@
 
 </div><br>
 
+## Badge
+
+Este é um badge conquistado por ter desenvolvido este projeto com a Alura no programa ONE - "Oracle Next Education" em parceria com a Oracle:
+
+<div align="center">
+
+![Badge](img/badge.png)
+
+</div>
+
 ## Descrição do Desafio
 
 O desafio Fórum Hub consiste na criação de uma API REST utilizando Java e Spring Boot. Este desafio tem como objetivo proporcionar uma experiência prática do papel de um desenvolvedor back-end, permitindo a aplicação de conceitos avançados de Java e Spring Boot, como criação de endpoints e implementação de camadas de segurança. A realização deste desafio é essencial para o programa ONE, pois permite a consolidação dos conhecimentos adquiridos.
