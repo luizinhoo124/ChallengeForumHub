@@ -26,6 +26,7 @@ O desafio Fórum Hub consiste na criação de uma API REST utilizando Java e Spr
 ## Estrutura do Projeto
 
 O projeto está estruturado de acordo com as melhores práticas para desenvolvimento com Spring Boot, seguindo a arquitetura MVC (Model-View-Controller). A estrutura do diretório é a seguinte:
+
 ```bash
 forum-hub/
 ├── src/
@@ -97,7 +98,7 @@ Para configurar o ambiente de desenvolvimento, siga os passos abaixo:
    ```bash
    mvn spring-boot:run
    ```
-A aplicação estará disponível em `http://localhost:8080`.
+  A aplicação estará disponível em `http://localhost:8080`.
 
 ## Testes
 Os testes unitários e de integração estão localizados no diretório src/test/java/com/forumhub. Para executar os testes, utilize o comando:
