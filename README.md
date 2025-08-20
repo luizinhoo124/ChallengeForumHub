@@ -1,115 +1,110 @@
-# Desafio Fórum Hub - API REST com Java e Spring Boot
+# Challenge ONE | Back End | Java + Spring
 
-<div align="center">
+<p align="center" >
+     <img width="200" heigth="200" src="https://user-images.githubusercontent.com/78982435/209698701-4c2cf2cf-e9b8-4985-9aec-9dee5b96ce8a.png">
+</p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Java Version](https://img.shields.io/badge/Java-8%2B-blue)](https://www.java.com/)
-![GitHub repo size](https://img.shields.io/github/repo-size/rodrigoborge/coonversor-moedas-java)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/rodrigoborge/coonversor-moedas-java)
+## 🔸 Bem vindos ao repositório do projeto Forum Hub 🔸
 
-</div><br>
+Este é um dos Challenges do programa **ONE - Oracle Next Education**.
 
-## Badge
+🔹 `Desafio:` 
 
-Este é um badge conquistado por ter desenvolvido este projeto com a Alura no programa ONE - "Oracle Next Education" em parceria com a Oracle:
+- Desenvolver uma API REST para um fórum
+- Implementar um CRUD (Create, Read, Update, Delete) para os tópicos
+- Validações realizadas segundo as regras de negócio
+- Implementação de uma base de dados para a persistência da informação
+- Serviço de autenticação/autorização para restringir o acesso à informação
 
-<div align="center">
+## 🔸 Passos fundamentais
 
-![Badge](img/badge.png)
+✅ `Passo 1:` Criar o projeto com Spring Initializr
 
-</div>
+✅ `Passo 2:` Implementar as classes Model
 
-## Descrição do Desafio
+✅ `Passo 3:` Implementar as classes Repository
 
-O desafio Fórum Hub consiste na criação de uma API REST utilizando Java e Spring Boot. Este desafio tem como objetivo proporcionar uma experiência prática do papel de um desenvolvedor back-end, permitindo a aplicação de conceitos avançados de Java e Spring Boot, como criação de endpoints e implementação de camadas de segurança. A realização deste desafio é essencial para o programa ONE, pois permite a consolidação dos conhecimentos adquiridos.
+✅ `Passo 4:` Implementar as classes Controller
 
-## Estrutura do Projeto
+✅ `Passo 5:` Implementar as validações
 
-O projeto está estruturado de acordo com as melhores práticas para desenvolvimento com Spring Boot, seguindo a arquitetura MVC (Model-View-Controller). A estrutura do diretório é a seguinte:
+✅ `Passo 6:` Implementar a autenticação/autorização
 
+✅ `Passo 7:` Implementar a base de dados
+
+## 🔸 Tecnologias utilizadas:
+
+- Java
+- Spring Boot
+- Spring Security
+- Spring Data JPA
+- MySQL
+- JWT (JSON Web Token)
+- Maven
+
+## 🔸 Como baixar e executar o projeto:
+
+### Pré-requisitos:
+- Java 17 ou superior
+- MySQL
+- Maven
+
+### Passos:
+
+1. Clone o repositório:
 ```bash
-forum-hub/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── forumhub/
-│   │   │           ├── controller/
-│   │   │           ├── model/
-│   │   │           ├── repository/
-│   │   │           ├── service/
-│   │   │           └── ForumHubApplication.java
-│   │   └── resources/
-│   │       ├── application.properties
-│   └── test/
-│       └── java/
-│           └── com/
-│               └── forumhub/
-├── .gitignore
-├── README.md
-└── pom.xml
+git clone https://github.com/rodrigoborge/Forum-Hub.git
 ```
 
-## Funcionalidades
+2. Configure o banco de dados MySQL no arquivo `application.properties`
 
-A API REST do Fórum Hub possui as seguintes funcionalidades:
-
-- **Endpoints de Usuários:**
-  - Criação de novos usuários.
-  - Autenticação e login de usuários.
-  - Recuperação de informações de perfil.
-
-- **Endpoints de Tópicos:**
-  - Criação de novos tópicos.
-  - Listagem de tópicos.
-  - Atualização e exclusão de tópicos.
-
-- **Endpoints de Respostas:**
-  - Criação de novas respostas em tópicos.
-  - Listagem de respostas em um tópico específico.
-
-- **Segurança:**
-  - Implementação de autenticação JWT para proteger os endpoints.
-  - Configuração de segurança para diferentes níveis de acesso.
-
-## Tecnologias Utilizadas
-
-- **Java 17:** Linguagem de programação utilizada para o desenvolvimento da API.
-- **Spring Boot:** Framework utilizado para a criação da aplicação.
-- **Spring Security:** Utilizado para implementação das camadas de segurança.
-- **JWT (JSON Web Token):** Utilizado para autenticação dos usuários.
-- **H2 Database:** Banco de dados em memória utilizado para testes.
-- **Maven:** Ferramenta de gerenciamento de dependências e build.
-
-## Configuração do Ambiente
-
-Para configurar o ambiente de desenvolvimento, siga os passos abaixo:
-
-1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/seu-usuario/forum-hub.git
-   cd forum-hub
-
-2. **Instale as dependências do Maven:**
-   ```bash
-   mvn install
-   ```
-3. **Execute a aplicação:**
-   ```bash
-   mvn spring-boot:run
-   ```
-  A aplicação estará disponível em `http://localhost:8080`.
-
-## Testes
-Os testes unitários e de integração estão localizados no diretório src/test/java/com/forumhub. Para executar os testes, utilize o comando:
+3. Execute o projeto:
 ```bash
-mvn test
+mvn spring-boot:run
 ```
 
-## Contribuição
+## 🔸 Funcionalidades da API:
 
-Contribuições são bem-vindas! Sinta-se à vontade para enviar sugestões, correções de bugs ou melhorias através de issues e pull requests.
+### Endpoints principais:
 
-## Licença
+- `POST /auth/login` - Autenticação de usuário
+- `GET /topicos` - Listar todos os tópicos
+- `POST /topicos` - Criar um novo tópico
+- `GET /topicos/{id}` - Buscar tópico por ID
+- `PUT /topicos/{id}` - Atualizar tópico
+- `DELETE /topicos/{id}` - Deletar tópico
 
-Este projeto está licenciado sob a [Licença MIT](LICENSE)
+## 🔸 Estrutura do projeto:
+
+```
+src/
+├── main/
+│   ├── java/
+│   │   └── com/forumhub/
+│   │       ├── controller/
+│   │       ├── model/
+│   │       ├── repository/
+│   │       ├── service/
+│   │       ├── dto/
+│   │       ├── config/
+│   │       └── exception/
+│   └── resources/
+│       └── application.properties
+└── test/
+```
+
+---
+
+## 🔸 Autor
+
+[<img src="https://avatars.githubusercontent.com/u/rodrigoborge?v=4" width=115><br><sub>Rodrigo Borge</sub>](https://github.com/rodrigoborge)
+
+---
+
+<p align="center">
+     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/78982435/209698701-4c2cf2cf-e9b8-4985-9aec-9dee5b96ce8a.png">
+</p>
+
+<p align="center">
+<img src="https://img.shields.io/badge/STATUS-CONCLUÍDO-green">
+</p>
