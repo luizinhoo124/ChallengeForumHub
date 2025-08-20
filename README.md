@@ -1,110 +1,238 @@
-# Challenge ONE | Back End | Java + Spring
+# 🚀 Forum Hub - Challenge ONE Back End
 
-<p align="center" >
-     <img width="200" heigth="200" src="https://user-images.githubusercontent.com/78982435/209698701-4c2cf2cf-e9b8-4985-9aec-9dee5b96ce8a.png">
-</p>
+![Java](https://img.shields.io/badge/Java-17-orange)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.0-brightgreen)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-blue)
+![JWT](https://img.shields.io/badge/JWT-Security-red)
+![Status](https://img.shields.io/badge/Status-Concluído-success)
 
-## 🔸 Bem vindos ao repositório do projeto Forum Hub 🔸
+## 📋 Sobre o Projeto
 
-Este é um dos Challenges do programa **ONE - Oracle Next Education**.
+Desenvolvi este projeto como parte do **Challenge ONE Back End** da Oracle Next Education em parceria com a Alura. O Forum Hub é uma API REST completa para gerenciamento de fóruns de discussão, implementando todas as funcionalidades essenciais de um sistema moderno de tópicos e respostas.
 
-🔹 `Desafio:` 
+## 🎯 Objetivo do Challenge
 
-- Desenvolver uma API REST para um fórum
-- Implementar um CRUD (Create, Read, Update, Delete) para os tópicos
-- Validações realizadas segundo as regras de negócio
-- Implementação de uma base de dados para a persistência da informação
-- Serviço de autenticação/autorização para restringir o acesso à informação
+O desafio consistia em criar uma API REST funcional que replicasse o funcionamento de um fórum, onde usuários podem:
+- Criar e gerenciar tópicos de discussão
+- Responder a tópicos existentes
+- Autenticar-se de forma segura
+- Gerenciar perfis de usuário
 
-## 🔸 Passos fundamentais
+## ✨ Funcionalidades Implementadas
 
-✅ `Passo 1:` Criar o projeto com Spring Initializr
+### 🔐 Autenticação e Segurança
+- [x] Sistema de autenticação JWT
+- [x] Registro e login de usuários
+- [x] Proteção de rotas sensíveis
+- [x] Validação de tokens
 
-✅ `Passo 2:` Implementar as classes Model
+### 📝 Gerenciamento de Tópicos
+- [x] Criar novos tópicos
+- [x] Listar tópicos com paginação
+- [x] Buscar tópico por ID
+- [x] Atualizar tópicos existentes
+- [x] Excluir tópicos
+- [x] Validação de dados de entrada
 
-✅ `Passo 3:` Implementar as classes Repository
+### 💬 Sistema de Respostas
+- [x] Adicionar respostas aos tópicos
+- [x] Listar respostas por tópico
+- [x] Gerenciar respostas dos usuários
 
-✅ `Passo 4:` Implementar as classes Controller
+### 👥 Gerenciamento de Usuários
+- [x] Cadastro de novos usuários
+- [x] Perfis de usuário
+- [x] Associação de tópicos e respostas aos usuários
 
-✅ `Passo 5:` Implementar as validações
+## 🛠️ Tecnologias Utilizadas
 
-✅ `Passo 6:` Implementar a autenticação/autorização
+- **Java 17** - Linguagem principal
+- **Spring Boot 3.0** - Framework principal
+- **Spring Security** - Segurança e autenticação
+- **Spring Data JPA** - Persistência de dados
+- **MySQL** - Banco de dados
+- **JWT** - Autenticação stateless
+- **Bean Validation** - Validação de dados
+- **Maven** - Gerenciamento de dependências
+- **Flyway** - Migração de banco de dados
 
-✅ `Passo 7:` Implementar a base de dados
+## 🚀 Como Executar o Projeto
 
-## 🔸 Tecnologias utilizadas:
-
-- Java
-- Spring Boot
-- Spring Security
-- Spring Data JPA
-- MySQL
-- JWT (JSON Web Token)
-- Maven
-
-## 🔸 Como baixar e executar o projeto:
-
-### Pré-requisitos:
+### Pré-requisitos
 - Java 17 ou superior
-- MySQL
-- Maven
+- MySQL 8.0 ou superior
+- Maven 3.6 ou superior
 
-### Passos:
+### Configuração do Ambiente
 
-1. Clone o repositório:
+1. **Clone o repositório:**
 ```bash
-git clone https://github.com/rodrigoborge/Forum-Hub.git
+git clone https://github.com/luizinhoo124/ChallengeForumHub.git
+cd ChallengeForumHub
 ```
 
-2. Configure o banco de dados MySQL no arquivo `application.properties`
+2. **Configure o banco de dados:**
+```sql
+CREATE DATABASE forum_hub;
+```
 
-3. Execute o projeto:
+3. **Configure as variáveis de ambiente:**
+```bash
+cp .env.example .env
+```
+
+Edite o arquivo `.env` com suas configurações:
+```properties
+DB_HOST=localhost
+DB_PORT=3306
+DB_NAME=forum_hub
+DB_USERNAME=seu_usuario
+DB_PASSWORD=sua_senha
+JWT_SECRET=sua_chave_secreta_jwt
+```
+
+4. **Execute o projeto:**
 ```bash
 mvn spring-boot:run
 ```
 
-## 🔸 Funcionalidades da API:
+A API estará disponível em: `http://localhost:8080`
 
-### Endpoints principais:
+## 📚 Documentação da API
 
-- `POST /auth/login` - Autenticação de usuário
-- `GET /topicos` - Listar todos os tópicos
-- `POST /topicos` - Criar um novo tópico
-- `GET /topicos/{id}` - Buscar tópico por ID
-- `PUT /topicos/{id}` - Atualizar tópico
-- `DELETE /topicos/{id}` - Deletar tópico
+### Autenticação
 
-## 🔸 Estrutura do projeto:
+#### POST `/auth/login`
+```json
+{
+  "email": "usuario@email.com",
+  "senha": "123456"
+}
+```
+
+#### POST `/auth/register`
+```json
+{
+  "nome": "Nome do Usuário",
+  "email": "usuario@email.com",
+  "senha": "123456"
+}
+```
+
+### Tópicos
+
+#### GET `/topicos`
+- Lista todos os tópicos (paginado)
+- Parâmetros: `page`, `size`, `sort`
+
+#### POST `/topicos`
+```json
+{
+  "titulo": "Título do Tópico",
+  "mensagem": "Conteúdo da mensagem",
+  "curso": "Nome do Curso"
+}
+```
+
+#### GET `/topicos/{id}`
+- Busca tópico específico por ID
+
+#### PUT `/topicos/{id}`
+```json
+{
+  "titulo": "Novo Título",
+  "mensagem": "Nova Mensagem"
+}
+```
+
+#### DELETE `/topicos/{id}`
+- Remove tópico específico
+
+### Respostas
+
+#### POST `/topicos/{id}/respostas`
+```json
+{
+  "mensagem": "Conteúdo da resposta"
+}
+```
+
+#### GET `/topicos/{id}/respostas`
+- Lista respostas de um tópico
+
+## 📁 Estrutura do Projeto
 
 ```
 src/
 ├── main/
 │   ├── java/
-│   │   └── com/forumhub/
-│   │       ├── controller/
-│   │       ├── model/
-│   │       ├── repository/
-│   │       ├── service/
-│   │       ├── dto/
-│   │       ├── config/
-│   │       └── exception/
+│   │   └── com/
+│   │       └── forumhub/
+│   │           ├── ForumHubApplication.java
+│   │           ├── config/
+│   │           │   ├── SecurityConfig.java
+│   │           │   └── CorsConfig.java
+│   │           ├── controller/
+│   │           │   ├── AuthController.java
+│   │           │   ├── TopicoController.java
+│   │           │   └── RespostaController.java
+│   │           ├── dto/
+│   │           │   ├── auth/
+│   │           │   ├── topico/
+│   │           │   └── resposta/
+│   │           ├── model/
+│   │           │   ├── Usuario.java
+│   │           │   ├── Topico.java
+│   │           │   └── Resposta.java
+│   │           ├── repository/
+│   │           │   ├── UsuarioRepository.java
+│   │           │   ├── TopicoRepository.java
+│   │           │   └── RespostaRepository.java
+│   │           ├── service/
+│   │           │   ├── AuthService.java
+│   │           │   ├── TopicoService.java
+│   │           │   └── TokenService.java
+│   │           └── exception/
+│   │               └── GlobalExceptionHandler.java
 │   └── resources/
-│       └── application.properties
+│       ├── application.properties
+│       └── db/migration/
 └── test/
 ```
 
+## 🎓 Aprendizados
+
+Durante o desenvolvimento deste projeto, aprofundei meus conhecimentos em:
+
+- **Spring Security**: Implementação de autenticação JWT
+- **JPA/Hibernate**: Relacionamentos entre entidades
+- **Validação de Dados**: Bean Validation e tratamento de erros
+- **API REST**: Boas práticas e padronização
+- **Banco de Dados**: Modelagem e migrações com Flyway
+- **Segurança**: Proteção contra vulnerabilidades comuns
+
+## 🤝 Como Contribuir
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 🙏 Agradecimentos
+
+- **Oracle Next Education** pela oportunidade do challenge
+- **Alura** pela excelente plataforma de ensino
+- **Comunidade Spring** pela documentação e suporte
+
 ---
 
-## 🔸 Autor
+⭐ **Desenvolvido com dedicação durante o Challenge ONE Back End**
 
-[<img src="https://avatars.githubusercontent.com/u/rodrigoborge?v=4" width=115><br><sub>Rodrigo Borge</sub>](https://github.com/rodrigoborge)
-
----
-
-<p align="center">
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/78982435/209698701-4c2cf2cf-e9b8-4985-9aec-9dee5b96ce8a.png">
-</p>
-
-<p align="center">
-<img src="https://img.shields.io/badge/STATUS-CONCLUÍDO-green">
-</p>
+📧 **Contato**: [Seu Email]
+🔗 **LinkedIn**: [Seu LinkedIn]
+🐱 **GitHub**: [@luizinhoo124](https://github.com/luizinhoo124)
